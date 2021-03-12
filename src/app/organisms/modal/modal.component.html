@@ -1,0 +1,75 @@
+<!-- <form #editForm = "ngForm" (ngSubmit) = "onSubmit(editForm)" >
+  <input type = "text" name = "tconst" ngModel>
+  <br/>
+
+  <input type = "email" name = "titleType" placeholder = "Your email"  ngModel>
+  <br/>
+  <input type = "email" name = "primaryTitle" placeholder = "Your email" ngModel>
+  <br/>
+  <input type = "email" name = "originalTitle" placeholder = "Your email" ngModel>
+  <br/>
+  <input type = "email" name = "isAdult" placeholder = "Your email" ngModel>
+  <br/>
+  <input type = "email" name = "startYear" placeholder = "Your email" ngModel>
+  <br/>
+  <input type = "email" name = "endYear" placeholder = "Your email" ngModel>
+  <br/>
+  <input type = "email" name = "runTimeMinutes" placeholder = "Your email" ngModel>
+
+  
+  <input type = "submit" value = "Send">
+</form> -->
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!--  <label>ID</label>
+    <input type="text" formControlName="tconst" />
+ -->
+    <mat-form-field>
+        <mat-label>
+            Title Type
+        </mat-label>
+        <input matInput formControlName="titleType">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Primary Title
+        </mat-label>
+        <input matInput formControlName="primaryTitle">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Original Title
+        </mat-label>
+        <input matInput formControlName="originalTitle">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Start Year
+        </mat-label>
+        <input matInput formControlName="startYear">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            End Year
+        </mat-label>
+        <input matInput formControlName="endYear">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Runtime Minutes
+        </mat-label>
+        <input matInput formControlName="runTimeMinutes">
+    </mat-form-field>
+    
+    <mat-form-field >
+        <mat-label>Genres</mat-label>
+        <mat-select  formControlName="genres" multiple>
+            <mat-option *ngFor="let genre of allGenres" [value]="genre">{{genre}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-checkbox color="primary"  formControlName="isAdult">For Adult</mat-checkbox>
+    <div class="buttons">
+    <button mat-button color="primary" disabled="{{!form.valid}}" type="submit" [mat-dialog-close]="form.value" cdkFocusInitial>Save</button>
+    <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+    </div>
+</form>

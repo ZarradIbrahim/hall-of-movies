@@ -1,0 +1,16 @@
+.header{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-bottom: var(--purple) 2px solid;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .header{
+        height: 60px;
+    }
+}

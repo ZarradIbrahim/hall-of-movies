@@ -1,0 +1,43 @@
+mat-header-cell{
+    font-family: 'OpenSans-Bold';
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+mat-table{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+.mat-form-field{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    margin-top: 20px;
+}
+
+mat-cell{
+    font-family: 'OpenSans-Regular';
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    word-break: break-word;
+
+}
+
+mat-row{
+    min-height: 60px;
+}
+.edit-div{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px ) and (min-width: 600px) {
+    mat-header-cell{
+        font-size: 12px;
+    }
+
+    mat-cell{
+        font-size: 11px;
+    }
+}
